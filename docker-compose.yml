@@ -10,7 +10,7 @@ services:
     networks:
       - coolify
     volumes:
-      - /data:/home/node/trilium-data
+      - /data/trilium/storage:/home/node/trilium-data
       - /usr/share/zoneinfo/Asia/Jerusalem:/etc/timezone:ro
       - /usr/share/zoneinfo/Asia/Jerusalem:/etc/localtime:ro
 
