@@ -1,6 +1,6 @@
 services:
   trilium:
-    image: zadam/trilium:latest    
+    image: triliumnext/notes:latest   
     container_name: trilium
     restart: unless-stopped
     environment:
