@@ -1,18 +1,24 @@
 services:
   trilium:
-    image: triliumnext/notes:latest
+    image: zadam/trilium:latest    
+    container_name: trilium
     restart: unless-stopped
     environment:
-      - TRILIUM_DATA_DIR=/home/node/trilium-data
+      - TRILIUM_DATA_DIR=/data/trilium/storage
       - TZ=Asia/Jerusalem
     ports:
-      - '8080'
+      - '8080:8080'    
     networks:
       - coolify
     volumes:
-      - /data/trilium/storage:/home/node/trilium-data
+      - trilium_data:/home/node/trilium-data    
       - /usr/share/zoneinfo/Asia/Jerusalem:/etc/timezone:ro
       - /usr/share/zoneinfo/Asia/Jerusalem:/etc/localtime:ro
+    labels:
+      - coolify.managed=true
+
+volumes:
+  trilium_data:    
 
 networks:
   coolify:
