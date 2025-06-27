@@ -4,7 +4,7 @@ services:
     container_name: trilium
     restart: unless-stopped
     environment:
-      - TRILIUM_DATA_DIR=/data/trilium/storage
+      - TRILIUM_DATA_DIR=/home/node/trilium-data
       - TZ=Asia/Jerusalem
     ports:
       - '8180:8080'    
